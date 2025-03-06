@@ -3,7 +3,7 @@ import { useUserContext } from "./providers/UserProvider";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./services/firebase";
-import Tasks from "./components/Tasks/Tasks";
+import Login from "./pages/Login";
 
 const App = () => {
     const {user, setUser} = useUserContext();
@@ -20,7 +20,7 @@ const App = () => {
         });
     }, [setUser]);
 
-    return user ? <Router /> : <Tasks />;
+    return user ? <Router /> : <Login />;
 };
 
 export default App;
